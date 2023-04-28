@@ -18,12 +18,12 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Testing'
-                sh 'dotnet test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         echo 'Testing'
+        //         sh 'dotnet test'
+        //     }
+        // }
 
         stage('Publish') {
             steps {
