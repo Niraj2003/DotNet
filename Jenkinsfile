@@ -25,11 +25,11 @@ pipeline {
         //     }
         // }
 
-        stage('Publish') {
-            steps {
-                echo 'Publishing'
-                sh 'dotnet publish'
-            }
-        }
+        // stage('Publish') {
+        //     steps {
+        //         echo 'Publishing'
+        //         sh 'dotnet publish'
+        //     }
+        // }
     }
 }
