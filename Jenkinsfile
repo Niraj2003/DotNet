@@ -1,31 +1,23 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
-                doGenerateSubmoduleConfigurations: false, 
-                extensions: [], submoduleCfg: [], 
-                userRemoteConfigs: [[url: 'https://github.com/Niraj2003/DotNet.git']]])
-            }
+    agent {
+        node {
+            label 'windows'
         }
-
+    }
+    stages {
         stage('Build') {
             steps {
-                sh 'dotnet build'
+                bat 'echo Building...'
             }
         }
-
         stage('Test') {
             steps {
-                sh 'dotnet test'
+                bat 'echo Testing...'
             }
         }
-
-        stage('Publish') {
+        stage('Deploy') {
             steps {
-                sh 'dotnet publish'
+                bat 'echo Deploying...'
             }
         }
     }
